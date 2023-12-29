@@ -12,7 +12,7 @@ function App() {
       let res = await axios.get("https://restcountries.com/v3.1/all");
       return res.data;
     } catch (error) {
-      // console.log(error);
+      console.log('Error fetching data: ', error);
       console.error('Error fetching data: ', error);
     }
   };
