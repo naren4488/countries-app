@@ -4,7 +4,7 @@ import  './CountryCards.css'
 const CountryCards = ({name, flags}) => {
   return (
     <div className='card'>
-            <img src={flags.png} alt={flags.alt} height={100} width={100} />
+            <img src={flags.png} alt={`Country flag ${flags.alt}`} height={100} width={100} />
         <p>{name.common}</p>
     </div>
   )
