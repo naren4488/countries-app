@@ -7,22 +7,26 @@ function App() {
   const [data, setData] = useState([]);
   // console.log("data", data);
 
-  const fetchData = async () => {
-    try {
-      let res = await axios.get("https://restcountries.com/v3.1/all");
-      return res.data;
-    } catch (error) {
-      console.log('Error fetching data: ', error);
-      console.error('Error fetching data: ', error);
-    }
-  };
+  // const fetchData = async () => {
+  //   try {
+  //     let res = await axios.get("https://restcountries.com/v3.1/all");
+  //     return res.data;
+  //   } catch (error) {
+  //     console.log('Error fetching data: ', error);
+  //     console.error('Error fetching data: ', error);
+  //   }
+  // };
 
   useEffect(() => {
-    const naren = async () => {
-      let result = await fetchData();
-      setData(result);
-    };
-    naren();
+    // const naren = async () => {
+    //   let result = await fetchData();
+    //   setData(result);
+    // };
+    // naren();
+    fetch("https://restcountries.com/v3.1/all")
+      .then((res) => res.json())
+      .then((data) => setData(data))
+      .catch((err) => console.error("Error fetching data: ", err));
   }, []);
   return (
     <div className="App">
